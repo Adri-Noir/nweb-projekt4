@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Title</title>
+    <link href="bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <style>
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    </style>
+</head>
+<body>
+    <p class="h1">Hello World!</p>
+    <div class="container">
+        <div class="row">
+
+                <div class="col">
+                    <img src="image-1.jpg" alt="">
+                </div>
+                <div class="col">
+                    <img src="image-2.jpg" alt="">
+                </div>
+                <div class="col">
+                    <img src="image-3.jpg" alt="">
+                </div>
+
+        </div>
+        <div class="row">
+
+                <div class="col">
+                    <img src="image-4.jpg" alt="">
+                </div>
+                <div class="col">
+                    <img src="image-5.jpg" alt="">
+                </div>
+                <div class="col">
+                    <img src="image-6.jpg" alt="">
+                </div>
+
+        </div>
+        <div class="row">
+
+                <div class="col">
+                    <img src="image-7.jpg" alt="">
+                </div>
+                <div class="col">
+                    <img src="image-8.jpg" alt="">
+                </div>
+                <div class="col">
+                    <img src="image-9.jpg" alt="">
+                </div>
+
+        </div>
+        <div class="row">
+
+                <div class="col">
+                    <img src="image-10.jpg" alt="">
+                </div>
+                <div class="col">
+                    <img src="image-11.jpg" alt="">
+                </div>
+                <div class="col">
+                    <img src="image-12.jpg" alt="">
+                </div>
+
+        </div>
+        <div class="row">
+
+                <div class="col">
+                    <img src="image-13.jpg" alt="">
+                </div>
+                <div class="col">
+                    <img src="image-14.jpg" alt="">
+                </div>
+                <div class="col">
+                    <img src="image-15.jpg" alt="">
+                </div>
+
+        </div>
+    </div>
+    <div id="container"></div>
+    <script src="d3.v7.min.js"></script>
+    <script type="module">
+
+    // Declare the chart dimensions and margins.
+    const width = 640;
+    const height = 400;
+    const marginTop = 20;
+    const marginRight = 20;
+    const marginBottom = 30;
+    const marginLeft = 40;
+
+    // Declare the x (horizontal position) scale.
+    const x = d3.scaleUtc()
+        .domain([new Date("2023-01-01"), new Date("2024-01-01")])
+        .range([marginLeft, width - marginRight]);
+
+    // Declare the y (vertical position) scale.
+    const y = d3.scaleLinear()
+        .domain([0, 100])
+        .range([height - marginBottom, marginTop]);
+
+    // Create the SVG container.
+    const svg = d3.create("svg")
+        .attr("width", width)
+        .attr("height", height);
+
+    // Add the x-axis.
+    svg.append("g")
+        .attr("transform", `translate(0,${height - marginBottom})`)
+        .call(d3.axisBottom(x));
+
+    // Add the y-axis.
+    svg.append("g")
+        .attr("transform", `translate(${marginLeft},0)`)
+        .call(d3.axisLeft(y));
+
+    // Append the SVG element.
+    container.append(svg.node());
+
+    </script>
+    <script src="bootstrap.bundle.min.js"></script>
+    <script src="lodash.min.js"></script>
+    <script type="application/javascript">
+        console.log(_.head([1, 2, 3]), _.head([1, 2, 3]) === 1);
+    </script>
+    <script src="jquery-3.7.1.min.js"></script>
+    <script src="axios.min.js"></script>
+</body>
+</html>
